@@ -1,9 +1,7 @@
-import IEventsList from './types/eventsList';
-import CallbackFunction from './types/cbFunction';
-import Event from './types/event';
+import { EventsList, CallbackFunction, Event } from './types';
 
 class MyEventEmitter {
-  events: IEventsList;
+  events: EventsList;
 
   constructor() {
     this.events = {};
