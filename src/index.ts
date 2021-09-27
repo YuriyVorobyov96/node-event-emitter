@@ -29,6 +29,10 @@ class MyEventEmitter {
     return this.events[event];
   }
 
+  eventNames(): Event[] {
+    return Object.keys(this.events);
+  }
+
   private checkEventExistsInList(event: Event): boolean {
     return this.events.hasOwnProperty(event);
   }
