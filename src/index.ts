@@ -22,7 +22,11 @@ class MyEventEmitter {
   emit(event: Event, ...args: unknown[]): void {
     this.checkEventOnEmit(event);
 
-    this.events[event].forEach(cb => cb(args));
+    this.events[event].forEach(cb => cb(...args));
+  }
+
+  listeners(event: Event): CallbackFunction[] {
+    return this.events[event];
   }
 
   private checkEventExistsInList(event: Event): boolean {
